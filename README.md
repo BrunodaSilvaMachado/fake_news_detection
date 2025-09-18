@@ -70,10 +70,10 @@ O t-SNE (\textit{t-distributed stochastic neighbor embedding}) verificar se os d
 * F1-score ≈ **84%**
 * Resultados consistentes e comparáveis aos benchmarks da literatura.
 
-** Acurácia**:
+**Acurácia**:
 ![acc](data/outputs/gcnbn_comp_crossval_results_acc.png)
 
-** Curva ROC**:
+**Curva ROC**:
 ![rock3](data/outputs/gcnbnk3_crossval_roc_curve.png)
 
 ![rock5](data/outputs/gcnbnk5_crossval_roc_curve.png)
