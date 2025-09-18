@@ -22,6 +22,7 @@ Neste projeto, exploramos o uso de **grafos de similaridade** construídos a par
   "Foundation ties bedevil Hillary Clinton...",1
   ...
 ```
+
 * **Label**:
 
   * `0` → Notícia verdadeira
@@ -29,7 +30,18 @@ Neste projeto, exploramos o uso de **grafos de similaridade** construídos a par
 
 ---
 
+* **Balanceamento das classes**:
+
+![Dataset Balanceado](data/outputs/distribuicao_classes.png)
+
+* **t-SNE**:
+
+O t-SNE (\textit{t-distributed stochastic neighbor embedding}) verificar se os dados são  separáveis de maneira não linear.
+
+![tsne](data/outputs/tsne.png)
 ## 🧩 Metodologia
+
+![Modelo GCN](notebook/img/fake_news_classification_framework.png)
 
 1. **Pré-processamento**: tokenização, remoção de stopwords e padronização.
 2. **Embeddings**: GloVe (100d), cada documento representado pela média dos vetores de suas palavras.
@@ -58,8 +70,18 @@ Neste projeto, exploramos o uso de **grafos de similaridade** construídos a par
 * F1-score ≈ **84%**
 * Resultados consistentes e comparáveis aos benchmarks da literatura.
 
-Exemplo de comparação ROC (ilustrativa):
-![Curvas ROC](data/outputs/roc_curves_sinteticas.png)
+** Acurácia**:
+![acc](data/outputs/gcnbn_comp_crossval_results_acc.png)
+
+** Curva ROC**:
+![rock3](data/outputs/gcnbnk3_crossval_roc_curve.png)
+
+![rock5](data/outputs/gcnbnk5_crossval_roc_curve.png)
+
+![rock8](data/outputs/gcnbnk8_crossval_roc_curve.png)
+
+![rock16](data/outputs/gcnbnk16_crossval_roc_curve.png)
+
 
 ---
 
@@ -70,12 +92,8 @@ Exemplo de comparação ROC (ilustrativa):
 │   ├── raw/           # Dataset original
 │   ├── processed/     # Embeddings e grafos salvos
 │   └── outputs/       # Resultados, gráficos e métricas
-├── src/
-│   ├── preprocess.py  # Pré-processamento e embeddings
-│   ├── graph.py       # Construção do grafo KNN
-│   ├── model.py       # Definição do GCN_BN
-│   └── train.py       # Loop de treino/validação
 ├── notebooks/         # Notebooks de experimentação
+│   ├── img/
 ├── requirements.txt   # Dependências do projeto
 └── README.md          # Este arquivo
 ```
